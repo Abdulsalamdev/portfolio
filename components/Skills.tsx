@@ -1,56 +1,97 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
 import {
-  SiHtml5, SiCss3, SiJavascript, SiTypescript,
-  SiReact, SiNextdotjs, SiNodedotjs, SiExpress,
-  SiMongodb, SiPostgresql, SiPrisma, SiTailwindcss,
-  SiGit, SiGithub,
-} from "react-icons/si";
+  SiHtml5, SiCss3, SiTailwindcss, SiJavascript, SiTypescript, SiReact, SiNextdotjs,
+  SiNodedotjs, SiExpress, SiMongodb, SiPostman, SiFigma, SiGit, SiGithub, 
+} from 'react-icons/si'
+import React from 'react'
 
 const skills = [
-  { name: "HTML", icon: SiHtml5 },
-  { name: "CSS", icon: SiCss3 },
-  { name: "JavaScript", icon: SiJavascript },
-  { name: "TypeScript", icon: SiTypescript },
-  { name: "React", icon: SiReact },
-  { name: "Next.js", icon: SiNextdotjs },
-  { name: "Node.js", icon: SiNodedotjs },
-  { name: "Express", icon: SiExpress },
-  { name: "MongoDB", icon: SiMongodb },
-  { name: "Tailwind CSS", icon: SiTailwindcss },
-  { name: "Git", icon: SiGit },
-  { name: "GitHub", icon: SiGithub },
-];
+  { name: 'HTML', icon: <SiHtml5 className="text-[#e34c26]" /> },
+  { name: 'CSS', icon: <SiCss3 className="text-[#264de4]" /> },
+  { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-[#38bdf8]" /> },
+  { name: 'JavaScript', icon: <SiJavascript className="text-[#f0db4f]" /> },
+  { name: 'TypeScript', icon: <SiTypescript className="text-[#007acc]" /> },
+  { name: 'React', icon: <SiReact className="text-[#61dafb]" /> },
+  { name: 'Next.js', icon: <SiNextdotjs className="text-[#E6E6E6]" /> },
+  { name: 'Node.js', icon: <SiNodedotjs className="text-[#3c873a]" /> },
+  { name: 'Express.js', icon: <SiExpress className="text-[#E6E6E6]" /> },
+  { name: 'MongoDB', icon: <SiMongodb className="text-[#47A248]" /> },
+  { name: 'Git', icon: <SiGit className="text-[#f1502f]" /> },
+  { name: 'GitHub', icon: <SiGithub className="text-[#E6E6E6]" /> },
+  { name: 'Postman', icon: <SiPostman className="text-[#ff6c37]" /> },
+  { name: 'Figma', icon: <SiFigma className="text-[#a259ff]" /> },
+]
 
-export default function Skills() {
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: 'easeOut' },
+  },
+}
+
+const Skills = () => {
   return (
-    <section
-      id="skills"
-      className="py-20 px-4 sm:px-8 bg-gray-100 dark:bg-[#0F0F13] text-gray-900 dark:text-gray-100"
-    >
+    <section id="skills" className="w-full py-20 px-4 md:px-10 lg:px-20 bg-transparent"
+    style={{
+       paddingInline: "30px",
+       paddingBlock: "15px",
+        maxWidth: "1200px",
+         marginInline: "auto",
+    }}>
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="max-w-6xl mx-auto text-center"
+        className="max-w-5xl mx-auto text-center"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
       >
-        <h2 className="text-3xl sm:text-4xl font-bold mb-10">My Skills</h2>
+        <motion.h2
+          variants={itemVariants}
+          className="text-3xl md:text-4xl font-bold text-[#E6E6E6] mb-10"
+          style={{
+            fontSize: "30px",
+            paddingBottom: "30px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap"
+          }}
+        >
+          Skills
+        </motion.h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {skills.map(({ name, icon: Icon }) => (
+        <motion.div
+          className="flex flex-wrap justify-center gap-6"
+          variants={containerVariants}
+        >
+          {skills.map((skill, i) => (
             <motion.div
-              key={name}
-              className="bg-white dark:bg-[#1C1C22] border border-gray-200 dark:border-gray-800 rounded-lg py-4 px-3 flex flex-col items-center justify-center text-center font-medium shadow-sm hover:shadow-md transition"
-              whileHover={{ scale: 1.05 }}
+              key={i}
+              variants={itemVariants}
+              whileHover={{ scale: 1.08 }}
+              className="w-[120px] h-[120px] bg-[#14141A] flex flex-col items-center justify-center gap-3 p-4 rounded-2xl shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-[#8A63F7]/30"
             >
-              <Icon className="w-8 h-8 mb-2 text-[#8A63F7]" />
-              {name}
+              <div className="text-4xl">{skill.icon}</div>
+              <p className="text-sm text-[#9CA3AF]">{skill.name}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </section>
-  );
+  )
 }
+
+export default Skills

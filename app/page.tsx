@@ -1,6 +1,11 @@
 import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/HeroSection";
+import About from "@/components/About";
+import Skills from "@/components/Skills";
+import ProjectsSection from "@/components/Project";
+import Experience from "@/components/ExperienceSection";
+import Services from "@/components/Services";
 
 export const metadata: Metadata = {
   title: "Silent Architect | Portfolio",
@@ -12,26 +17,11 @@ export default function HomePage() {
     <main className="bg-white dark:bg-[#0B0B0F] text-gray-900 dark:text-[#E6E6E6] transition-colors duration-300 scroll-smooth">
       <Navbar />
        <Hero />
-       {/* <About /> */}
-       {/* <Skills /> */}
-
-      <section id="projects" className="pt-24">
-        {/* <ProjectsSection /> */}
-      </section>
-
-      <section id="experience" className="pt-24">
-        {/* <ExperienceSection /> */}
-      </section>
-
-      <section id="services" className="pt-24">
-        {/* <ServicesSection /> */}
-      </section>
-
-      <section id="contact" className="pt-24 pb-16">
-        {/* <ContactSection /> */}
-      </section>
-
-      {/* <Footer /> */}
+       <About />
+       <Skills />
+       <ProjectsSection />
+       <Experience />
+       <Services />
     </main>
   );
 }

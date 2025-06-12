@@ -1,57 +1,85 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+import React from "react";
 
-export default function About() {
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeInOut",
+    },
+  },
+};
+
+const About = () => {
   return (
     <section
-      id=""
-      className="flex items-center justify-center py-20 px-4 sm:px-8 bg-white dark:bg-[#0B0B0F] text-gray-800 dark:text-gray-200"
+      id="about"
+       style={{
+        paddingInline: "30px",
+        paddingBlock: "15px",
+      }}
+      className="w-full py-20 px-4 md:px-10 lg:px-20 bg-transparent"
     >
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="max-w-4xl mx-auto text-center"
+      initial="hidden"
+  whileInView="visible"
+       variants={containerVariants}
+        className="mx-auto max-w-[800px] flex flex-col gap-6 text-center"
+        style={{
+          maxWidth: "1200px",
+          marginInline: "auto",
+        }}
       >
-        <h2 className="text-3xl sm:text-4xl font-bold mb-6">About Me</h2>
-
-        <p className="text-base sm:text-lg mb-6">
-          I am a creative full-stack developer with over three years of experience building responsive and scalable web applications.
-          <br />
-          I believe programming is not just about writing code, but building solutions to real-world problems.
-        </p>
-
-        <p className="text-base sm:text-lg mb-6">
-          My goal is to continuously create methods and systems that improve service delivery and help businesses and organizations meet their goals.
-          I'm always learning and growing.
-        </p>
-
-        <div className="flex justify-center gap-8 mb-6 text-lg">
-          <div>
-            <span className="font-bold text-[#8A63F7]">03+</span>
-            <p>Years Experience</p>
-          </div>
-          <div>
-            <span className="font-bold text-[#8A63F7]">25+</span>
-            <p>Completed Projects</p>
-          </div>
-          <div>
-            <span className="font-bold text-[#8A63F7]">06+</span>
-            <p>Clients Worked With</p>
-          </div>
-        </div>
-
-        <Link
-          href="/resume.pdf"
-          target="_blank"
-          className="inline-block bg-[#8A63F7] hover:bg-[#6C4BD1] text-white font-medium py-2 px-6 rounded-full transition duration-300"
+        <motion.h2
+        variants={fadeUp}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl md:text-4xl font-bold text-[#E6E6E6] dark:text-[#E6E6E6]"
+          style={{
+            fontSize: "30px",
+          }}
         >
-          My Resume
-        </Link>
+          About Me
+        </motion.h2>
+
+        <motion.p
+         variants={fadeUp}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="text-[#9CA3AF] dark:text-[#9CA3AF] text-base md:text-lg leading-relaxed"
+        >
+          I'm a full-stack developer with a passion for crafting seamless and
+          high-performance web applications. My journey began with a curiosity
+          for how things work on the internet, and since then, I've been
+          building projects that blend great user experiences with scalable
+          backend systems. I enjoy solving real problems through code,
+          continuously learning, and contributing to impactful digital products.
+          <br />
+          <br />
+          As I grow in the tech space, I'm also exploring the exciting world of
+          Artificial Intelligence and Machine Learning. I'm particularly
+          interested in how AI can enhance user experiences, automate workflows,
+          and create smarter, data-driven solutions.
+        </motion.p>
       </motion.div>
     </section>
   );
-}
+};
+
+export default About;

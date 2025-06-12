@@ -1,13 +1,21 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 // TypingText Component
-function TypingText({ text, speed = 50, onComplete }: { text: string; speed?: number; onComplete?: () => void }) {
-  const [displayed, setDisplayed] = useState('');
+function TypingText({
+  text,
+  speed = 50,
+  onComplete,
+}: {
+  text: string;
+  speed?: number;
+  onComplete?: () => void;
+}) {
+  const [displayed, setDisplayed] = useState("");
   const [index, setIndex] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
   const [isDone, setIsDone] = useState(false);
@@ -35,7 +43,9 @@ function TypingText({ text, speed = 50, onComplete }: { text: string; speed?: nu
   return (
     <span>
       {displayed}
-      {!isDone && <span className="inline-block w-[1ch]">{showCursor ? '|' : ''}</span>}
+      {!isDone && (
+        <span className="inline-block w-[1ch]">{showCursor ? "|" : ""}</span>
+      )}
     </span>
   );
 }
@@ -46,10 +56,10 @@ export default function HeroSection() {
 
   return (
     <section
-      id="home"
+      id="/"
       style={{
         paddingTop: "60px",
-        paddingInline: "20px"
+        paddingInline: "20px",
       }}
       className="min-h-screen flex items-center justify-center px-4 py-20 sm:py-32 bg-[#0B0B0F] text-[#E6E6E6]"
     >
@@ -60,8 +70,8 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-              style={{
-              fontSize: "30px"
+            style={{
+              fontSize: "30px",
             }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-[#9CA3AF]"
           >
@@ -78,9 +88,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 1 }}
-               style={{
+            style={{
               marginTop: "10px",
-              fontSize: "26px"
+              fontSize: "26px",
             }}
             className="text-xl sm:text-2xl text-[#8A63F7] font-semibold mb-6"
           >
@@ -100,7 +110,7 @@ export default function HeroSection() {
             className="text-base md:text-lg text-[#9CA3AF] max-w-lg mb-6"
             style={{
               marginTop: "10px",
-              fontSize: "20px"
+              fontSize: "20px",
             }}
           >
             {step >= 3 && (
@@ -116,23 +126,44 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
+              style={{
+                display: "flex",
+                gap: "20px",
+                alignItems: "center"
+              }}
             >
               <Link href="#contact">
                 <button
                   style={{
                     marginTop: "10px",
-                    backgroundColor: '#8A63F7',
-                    color: '#ffffff',
-                    padding: '0.75rem 1.5rem',
-                    borderRadius: '1rem',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
+                    backgroundColor: "#8A63F7",
+                    color: "#ffffff",
+                    padding: "0.75rem 1.5rem",
+                    borderRadius: "1rem",
+                    fontSize: "0.875rem",
+                    fontWeight: "500",
                   }}
                   className="hover:bg-[#6C4BD1] transition duration-300"
                 >
                   Contact Me
                 </button>
               </Link>
+              <a
+                style={{
+                    marginTop: "10px",
+                    backgroundColor: "#8A63F7",
+                    color: "#ffffff",
+                    padding: "0.75rem 1.5rem",
+                    borderRadius: "1rem",
+                    fontSize: "0.875rem",
+                    fontWeight: "500",
+                  }}
+                href="/resume.pdf"
+                download
+                className="inline-block bg-[#8A63F7] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#6C4BD1] transition"
+              >
+                Download CV
+              </a>
             </motion.div>
           )}
         </div>
