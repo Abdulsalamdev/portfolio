@@ -1,8 +1,11 @@
+// 'use client'
 import ThemeProvider from "@/components/ThemeProvider";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -10,26 +13,29 @@ const outfit = Outfit({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Silent Architect | Portfolio",
-  description:
-    "Silent Architect is a full-stack developer building modern web apps and solutions for people and businesses globally.",
-  keywords: [
-    "Silent Architect",
-    "Full-stack Developer",
-    "Web Developer",
-    "Portfolio",
-    "JavaScript",
-    "Next.js",
-    "Node.js",
-    "Tailwind CSS",
-  ],
-  creator: "Silent Architect",
-  authors: [{ name: "Silent Architect", url: "https://your-portfolio-url.com" }],
-  icons: {
-    icon: "/favicon.ico",
+// app/layout.tsx
+export const metadata = {
+  title: 'Silent Architect | Full-Stack Developer Portfolio',
+  description: 'A portfolio by Abdulsalam Akinyoola – Full-Stack Developer skilled in Next.js, Node.js, MongoDB.',
+  keywords: 'Full-Stack Developer, Next.js, Portfolio, JavaScript, MongoDB, Node.js, Freelance Developer, Nigeria',
+  authors: [{ name: 'Abdulsalam Akinyoola' }],
+  creator: 'Abdulsalam Akinyoola',
+  openGraph: {
+    title: 'Silent Architect | Full-Stack Developer Portfolio',
+    description: 'Check out the portfolio of Abdulsalam Akinyoola — developer and freelancer for hire.',
+    url: 'https://yourdomain.com',
+    siteName: 'Silent Architect Portfolio',
+    locale: 'en_US',
+    type: 'website',
   },
-};
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Silent Architect | Full-Stack Developer Portfolio',
+    description: 'Built with Next.js, Node.js, and MongoDB.',
+    site: '@yourTwitterHandle',
+  },
+}
+
 
 export default function RootLayout({
   children,
@@ -42,6 +48,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>
+        <ToastContainer position="top-right" autoClose={3000} />
       </body>
     </html>
   );
