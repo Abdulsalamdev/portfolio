@@ -1,13 +1,30 @@
+// app/projects/[slug]/page.tsx
 import { notFound } from 'next/navigation'
 import { projects } from '@/data/project'
 import { FaGithub } from 'react-icons/fa'
 import { SiNetlify, SiVercel } from 'react-icons/si'
 import Link from 'next/link'
 import Image from 'next/image'
+import * as React from 'react'
 
-export default function ProjectDetails({ params }: { params: { slug: string } }) {
-  const project = projects.find(p => p.slug === params.slug)
-console.log(project)
+type PageProps = {
+  params: {
+    slug: string
+  }
+}
+
+export default async function ProjectDetails({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+ const { slug } =  await params
+  // const project = projects.find(p => p.slug === params.slug)
+  const project = projects.find(p => p.slug === slug)
+
+  console.log(project)
+  console.log("Params:", slug) 
+
   if (!project) return notFound()
 
   return (
