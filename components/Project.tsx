@@ -97,7 +97,7 @@ export default function ProjectsSection() {
               }}
             >
               {/* Image */}
-              <Image
+              {/* <Image
                 src={project.image}
                 alt={project.title}
                 width={350}
@@ -109,7 +109,7 @@ export default function ProjectsSection() {
                   borderRadius: "8px",
                   marginBottom: "12px"
                 }}
-              />
+              /> */}
 
               {/* Title */}
               <h3

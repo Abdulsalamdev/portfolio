@@ -42,13 +42,14 @@ export default async function ProjectDetails({
         </h1>
         <p style={{ color: '#9CA3AF', marginBottom: '8px' }}>{project.category}</p>
 
-        <Image
+      {/* Image Cover */}
+        {/* <Image
           src={project.image}
           alt={project.title}
           width={800}
           height={400}
           style={{ borderRadius: '12px', marginBottom: '20px', width: '100%', objectFit: 'cover' }}
-        />
+        /> */}
 
         <p style={{ marginBottom: '24px', fontSize: '16px', lineHeight: '1.6' }}>
           {project.description}
