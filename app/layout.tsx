@@ -15,24 +15,24 @@ const outfit = Outfit({
 
 // app/layout.tsx
 export const metadata = {
-  title: 'Silent Architect | Full-Stack Developer Portfolio',
+  title: 'Abdulsalam Akinyoola | Full-Stack Developer Portfolio',
   description: 'A portfolio by Abdulsalam Akinyoola – Full-Stack Developer skilled in Next.js, Node.js, MongoDB.',
   keywords: 'Full-Stack Developer, Next.js, Portfolio, JavaScript, MongoDB, Node.js, Freelance Developer, Nigeria',
   authors: [{ name: 'Abdulsalam Akinyoola' }],
   creator: 'Abdulsalam Akinyoola',
   openGraph: {
-    title: 'Silent Architect | Full-Stack Developer Portfolio',
+    title: 'Abdulsalam Akinyoola | Full-Stack Developer Portfolio',
     description: 'Check out the portfolio of Abdulsalam Akinyoola — developer and freelancer for hire.',
-    url: 'https://yourdomain.com',
-    siteName: 'Silent Architect Portfolio',
+    url: 'https://abdulsalamakinyoola.vercel.app',
+    siteName: 'Abdulsalam Akinyoola Portfolio',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Silent Architect | Full-Stack Developer Portfolio',
+    title: 'Abdulsalam Akinyoola | Full-Stack Developer Portfolio',
     description: 'Built with Next.js, Node.js, and MongoDB.',
-    site: '@yourTwitterHandle',
+    site: '@Abdulsalamdevv',
   },
 }
 

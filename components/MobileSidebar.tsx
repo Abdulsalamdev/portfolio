@@ -9,6 +9,8 @@ const navLinks = [
   { href: '#about', label: 'About Me' },
   { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
+   { href: '#experience', label: 'Experience' },
+  { href: '#services', label: 'Services' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -77,14 +79,11 @@ export function MobileSidebar() {
                     className="text-base font-medium text-muted-foreground hover:text-primary"
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 * index }}
+                    transition={{ delay: 0.2 * index }}
                   >
                     {link.label}
                   </motion.a>
                 ))}
-
-                {/* Theme Toggle */}
-                <ThemeToggle />
               </div>
             </motion.div>
           </>

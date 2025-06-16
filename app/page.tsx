@@ -7,11 +7,10 @@ import ProjectsSection from "@/components/Project";
 import Experience from "@/components/ExperienceSection";
 import Services from "@/components/Services";
 import ContactForm from "@/components/ContactForm";
-import ThemeToggle from "@/components/ThemeToggle";
 import ThemeWrapper from "@/components/ThemeeWrapper";
 
 export const metadata: Metadata = {
-  title: "Silent Architect | Portfolio",
+  title: "Abdulsalam Akinyoola | Portfolio",
   description:
     "I'm a full-stack developer building modern web apps for people and businesses around the world.",
 };

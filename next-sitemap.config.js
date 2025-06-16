@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://yourdomain.com',
+  siteUrl: 'https://abdulsalamakinyoola.vercel.app/',
   generateRobotsTxt: true,
 }
