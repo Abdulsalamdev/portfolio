@@ -28,16 +28,16 @@ const About = () => {
   return (
     <section
       id="about"
-       style={{
+      style={{
         paddingInline: "30px",
         paddingBlock: "15px",
       }}
       className="w-full py-20 px-4 md:px-10 lg:px-20 bg-transparent"
     >
       <motion.div
-      initial="hidden"
-  whileInView="visible"
-       variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        variants={containerVariants}
         className="mx-auto max-w-[800px] flex flex-col gap-6 text-center"
         style={{
           maxWidth: "1200px",
@@ -45,7 +45,7 @@ const About = () => {
         }}
       >
         <motion.h2
-        variants={fadeUp}
+          variants={fadeUp}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -58,7 +58,7 @@ const About = () => {
         </motion.h2>
 
         <motion.p
-         variants={fadeUp}
+          variants={fadeUp}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
@@ -72,10 +72,11 @@ const About = () => {
           continuously learning, and contributing to impactful digital products.
           <br />
           <br />
-          As I grow in the tech space, I'm also exploring the exciting world of
-          Artificial Intelligence and Machine Learning. I'm particularly
-          interested in how AI can enhance user experiences, automate workflows,
-          and create smarter, data-driven solutions.
+          As I grow in the tech space, I'm transitioning into the field of
+          Artificial Intelligence as an aspiring AI Engineer. I'm passionate
+          about building intelligent systems that solve real-world problems,
+          enhance user experiences, and automate complex processes through
+          machine learning, deep learning, and data-driven decision-making
         </motion.p>
       </motion.div>
     </section>

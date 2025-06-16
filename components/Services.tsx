@@ -1,4 +1,5 @@
-// app/components/Services.tsx
+"use client";
+import { motion } from "framer-motion";
 
 export default function Services() {
   const services = [
@@ -34,13 +35,32 @@ export default function Services() {
       }}
     >
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        <h2
-          style={{ fontSize: "32px", fontWeight: "bold", marginBottom: "40px" }}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          style={{
+            fontSize: "32px",
+            fontWeight: "bold",
+            marginBottom: "40px",
+          }}
         >
           Services
-        </h2>
+        </motion.h2>
 
-        <div
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
@@ -48,14 +68,23 @@ export default function Services() {
           }}
         >
           {services.map((service, idx) => (
-            <div
+            <motion.div
               key={idx}
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              whileHover={{
+                scale: 1.03,
+                transition: { duration: 0.3 },
+              }}
               style={{
                 backgroundColor: "#1F1F23",
                 padding: "24px",
                 borderRadius: "16px",
                 boxShadow: "0 4px 14px rgba(0,0,0,0.3)",
                 transition: "transform 0.3s",
+                cursor: "pointer",
               }}
             >
               <h3
@@ -77,9 +106,9 @@ export default function Services() {
               >
                 {service.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

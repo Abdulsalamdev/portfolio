@@ -29,7 +29,10 @@ export default function ProjectsSection() {
     >
       <div style={{ maxWidth: "1200px", marginInline: "auto" }}>
         {/* Heading */}
-        <h2
+        <motion.h2
+         initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           style={{
             fontSize: "32px",
             fontWeight: "bold",
@@ -38,10 +41,13 @@ export default function ProjectsSection() {
           }}
         >
           Projects
-        </h2>
+        </motion.h2>
 
         {/* Filters */}
-        <div
+        <motion.div
+         initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           style={{
             display: "flex",
             justifyContent: "center",
@@ -69,10 +75,13 @@ export default function ProjectsSection() {
               {filter.charAt(0).toUpperCase() + filter.slice(1)}
             </button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Project Grid */}
-        <div
+        <motion.div
+         initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           style={{
             display: "flex",
             flexWrap: "wrap",
@@ -81,134 +90,135 @@ export default function ProjectsSection() {
           }}
         >
           {filteredProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.15 }}
-              viewport={{ once: true }}
-              style={{
-                width: "100%",
-                maxWidth: "350px",
-                backgroundColor: "#1A1A1F",
-                padding: "16px",
-                borderRadius: "12px",
-                boxShadow: "0 2px 10px rgba(0,0,0,0.2)"
-              }}
-            >
-              {/* Image */}
-              {/* <Image
-                src={project.image}
-                alt={project.title}
-                width={350}
-                height={200}
-                style={{
-                  width: "100%",
-                  height: "200px",
-                  objectFit: "cover",
-                  borderRadius: "8px",
-                  marginBottom: "12px"
-                }}
-              /> */}
+         <motion.div
+  key={project.id}
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  whileHover={{ scale: 1.03, y: -8 }}
+  transition={{ duration: 0.4, delay: index * 0.15, type: "spring" }}
+  viewport={{ once: true }}
+  style={{
+    width: "100%",
+    maxWidth: "350px",
+    backgroundColor: "#1A1A1F",
+    padding: "16px",
+    borderRadius: "12px",
+    boxShadow: "0 2px 10px rgba(0,0,0,0.2)",
+    cursor: "pointer",
+    transition: "box-shadow 0.3s ease, background-color 0.3s ease"
+  }}
+  whileTap={{ scale: 0.98 }}
+>
+  {/* <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+    <Image
+      src={project.image}
+      alt={project.title}
+      width={350}
+      height={200}
+      style={{
+        width: "100%",
+        height: "200px",
+        objectFit: "cover",
+        borderRadius: "8px",
+        marginBottom: "12px"
+      }}
+    />
+  </motion.div> */}
 
-              {/* Title */}
-              <h3
-                style={{
-                  fontSize: "20px",
-                  fontWeight: 600,
-                  marginBottom: "8px"
-                }}
-              >
-                {project.title}
-              </h3>
+  <h3
+    style={{
+      fontSize: "20px",
+      fontWeight: 600,
+      marginBottom: "8px",
+      color: "#F4B400",
+    }}
+  >
+    {project.title}
+  </h3>
 
-              {/* Category */}
-              <p
-                style={{
-                  fontSize: "14px",
-                  color: "#9CA3AF",
-                  marginBottom: "12px",
-                  textTransform: "capitalize"
-                }}
-              >
-                {project.category}
-              </p>
+  <p
+    style={{
+      fontSize: "14px",
+      color: "#9CA3AF",
+      marginBottom: "12px",
+      textTransform: "capitalize"
+    }}
+  >
+    {project.category}
+  </p>
 
-              {/* Links */}
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "8px",
-                  marginTop: "12px"
-                }}
-              >
-                {/* Live */}
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "8px",
-                      color: "#8A63F7",
-                      fontSize: "14px",
-                      textDecoration: "none"
-                    }}
-                  >
-                    {project.liveUrl.includes("vercel") ? (
-                      <SiVercel size={16} />
-                    ) : (
-                      <SiNetlify size={16} />
-                    )}
-                    View Live
-                  </a>
-                )}
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "8px",
+      marginTop: "12px"
+    }}
+  >
+    {project.liveUrl && (
+      <a
+        href={project.liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "8px",
+          color: "#8A63F7",
+          fontSize: "14px",
+          textDecoration: "none"
+        }}
+      >
+        {project.liveUrl.includes("vercel") ? (
+          <SiVercel size={16} />
+        ) : (
+          <SiNetlify size={16} />
+        )}
+        View Live
+      </a>
+    )}
 
-                {/* Code */}
-                <a
-                  href={project.codeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    color: "#8A63F7",
-                    fontSize: "14px",
-                    textDecoration: "none"
-                  }}
-                >
-                  <FaGithub size={16} />
-                  View Code
-                </a>
+    <a
+      href={project.codeUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "8px",
+        color: "#8A63F7",
+        fontSize: "14px",
+        textDecoration: "none"
+      }}
+    >
+      <FaGithub size={16} />
+      View Code
+    </a>
 
-                {/* Details Button */}
-                <Link
-                  href={`/projects/${project.slug}`}
-                  style={{
-                    marginTop: "10px",
-                    backgroundColor: "#6C4BD1",
-                    color: "#fff",
-                    borderRadius: "8px",
-                    padding: "8px 12px",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    fontSize: "14px",
-                    fontWeight: 500,
-                    textDecoration: "none",
-                    boxShadow: "0 2px 4px rgba(0,0,0,0.2)"
-                  }}
-                >
-                  View Details <HiOutlineArrowNarrowRight size={16} />
-                </Link>
-              </div>
-            </motion.div>
+    <Link
+      href={`/projects/${project.slug}`}
+      style={{
+        marginTop: "10px",
+        backgroundColor: "#6C4BD1",
+        color: "#fff",
+        borderRadius: "8px",
+        padding: "8px 12px",
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "8px",
+        fontSize: "14px",
+        fontWeight: 500,
+        textDecoration: "none",
+        boxShadow: "0 2px 4px rgba(0,0,0,0.2)"
+      }}
+    >
+      View Details <HiOutlineArrowNarrowRight size={16} />
+    </Link>
+  </div>
+</motion.div>
+
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
