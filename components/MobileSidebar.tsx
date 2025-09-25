@@ -42,7 +42,8 @@ export function MobileSidebar() {
       {/* Sidebar + Dimmed Overlay */}
       <AnimatePresence>
         {open && (
-          <>
+          <div 
+          onClick={() => setOpen(false)}>
             {/* Dim Background */}
             <motion.div
               key="overlay"
@@ -86,9 +87,10 @@ export function MobileSidebar() {
                 ))}
               </div>
             </motion.div>
-          </>
+          </div>
         )}
       </AnimatePresence>
+      
     </div>
   )
 }

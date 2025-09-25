@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 // TypingText Component
 function TypingText({
   text,
-  speed = 50,
+  speed = 80,
   onComplete,
 }: {
   text: string;

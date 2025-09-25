@@ -48,8 +48,9 @@ const Skills = () => {
     style={{
        paddingInline: "30px",
        paddingBlock: "15px",
-        maxWidth: "1200px",
          marginInline: "auto",
+         display: "flex",
+         justifyContent: "center"
     }}>
       <motion.div
         className="max-w-5xl mx-auto text-center"
