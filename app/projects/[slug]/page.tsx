@@ -15,7 +15,14 @@ type Props = {
 
 export default function ProjectDetails({ params }: Props) {
 
-      const { slug } = params
+     const [slug, setSlug] = React.useState<string | null>(null);
+
+     
+  React.useEffect(() => {
+    setSlug(params.slug);
+  }, [params]);
+
+  if (!slug) return null;
 
   const project = projects.find((p) => p.slug === slug)
 

@@ -35,7 +35,7 @@ export default function ProjectsSection() {
     >
       <div style={{ maxWidth: '1200px', marginInline: 'auto' }}>
         {/* Heading */}
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -48,7 +48,7 @@ export default function ProjectsSection() {
           }}
         >
           Projects
-        </motion.h2>
+        </motion.div>
 
         {/* Filters */}
         <motion.div

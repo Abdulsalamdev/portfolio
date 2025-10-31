@@ -18,7 +18,7 @@ export const projects: ProjectType[] = [
     category: "fullstack",
     description:
       "A modern, responsive portfolio built with Next.js, Tailwind CSS, and Framer Motion. Features dark/light theme, animations, and project filtering.",
-    image: "/projects/portfolio.png", // 📌 ensure this image exists at /public/projects/portfolio.png
+    image: "/projects/profile.png", // 📌 ensure this image exists at /public/projects/portfolio.png
     liveUrl: "https://abdulsalamakinyoola.vercel.app",
     codeUrl: "https://github.com/Abdulsalamdev/portfolio",
   },
@@ -40,7 +40,7 @@ export const projects: ProjectType[] = [
     category: "frontend",
     description:
       "Frontend UI for an e-commerce platform using React, Tailwind, and Framer Motion. Features responsive product grid, cart system, and search.",
-    image: "/projects/ecommerce.png",
+    image: "/projects/marsline.png",
     liveUrl: "https://ecommerce-frontend.vercel.app",
     codeUrl: "https://github.com/yourusername/ecommerce-frontend",
   },
@@ -51,7 +51,7 @@ export const projects: ProjectType[] = [
   category: "fullstack",
   description:
     "A content management system for blogging, built with Next.js 14, Tailwind CSS, and MongoDB. Supports markdown editing, authentication, and admin dashboard.",
-  image: "/projects/blog-cms.png",
+  image: "/projects/fullstack.png",
   liveUrl: "https://blog-cms.vercel.app",
   codeUrl: "https://github.com/yourusername/blog-cms",
 },
@@ -62,7 +62,7 @@ export const projects: ProjectType[] = [
   category: "frontend",
   description:
     "A task management UI built with React, Tailwind CSS, and Zustand for state management. Includes task creation, filtering, and animations.",
-  image: "/projects/task-manager.png",
+  image: "/projects/afex.png",
   liveUrl: "https://task-manager.vercel.app",
   codeUrl: "https://github.com/yourusername/task-manager",
 },
@@ -84,7 +84,7 @@ export const projects: ProjectType[] = [
   category: "fullstack",
   description:
     "Admin dashboard to manage portfolio content (projects, skills, services) built with Next.js App Router and MongoDB. Protected by admin login.",
-  image: "/projects/portfolio-cms-admin.png",
+  image: "/projects/niaja.png",
   liveUrl: "https://portfolio-cms-admin.vercel.app",
   codeUrl: "https://github.com/yourusername/portfolio-cms-admin",
 },
@@ -95,7 +95,7 @@ export const projects: ProjectType[] = [
   category: "frontend",
   description:
     "Responsive weather dashboard using HTML, Tailwind CSS, and JavaScript. Fetches real-time weather using OpenWeatherMap API.",
-  image: "/projects/weather-dashboard.png",
+  image: "/projects/tutordeck.png",
   liveUrl: "https://weather-dashboard.vercel.app",
   codeUrl: "https://github.com/yourusername/weather-dashboard",
 }
