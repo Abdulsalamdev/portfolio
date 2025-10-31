@@ -17,16 +17,20 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="bg-white dark:bg-[#0B0B0F] text-gray-900 dark:text-[#E6E6E6] transition-colors duration-300 scroll-smooth">
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <ProjectsSection />
-      <Experience />
-      <Services />
-      <ContactForm />
-      <ThemeWrapper />
-    </main>
+<main
+  className="min-h-screen transition-colors duration-300 scroll-smooth bg-[var(--bg)] text-[var(--text)] overflow-x-hidden"
+>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Navbar />
+    <Hero />
+    <About />
+    <Skills />
+    <ProjectsSection />
+    <Experience />
+    <Services />
+    <ContactForm />
+  </div>
+</main>
+
   );
 }

@@ -1,20 +1,57 @@
 @import "tailwindcss";
 @import "tailwindcss/preflight";
 @import "tailwindcss/utilities";
-
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-/* app/globals.css */
-html,
-body {
-  background-color: #0B0B0F;
-  color: #E6E6E6;
-  font-family: var(--font-outfit), sans-serif;
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  margin: 0;
-  padding: 0;
-}
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  @apply transition-colors duration-300 ease-in-out bg-[var(--bg)] text-[var(--text)];
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Light Theme */
+:root {
+  --bg: #f9fafb;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent1: #8a63f7;
+  --accent2: #6c4bd1;
+  --accent3: #f4b400;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg: #0b0b0f;
+  --text: #e6e6e6;
+  --muted: #9ca3af;
+  --accent1: #8a63f7;
+  --accent2: #6c4bd1;
+  --accent3: #f4b400;
+}
+
+a {
+  color: var(--accent1);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--accent2);
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button.primary {
+  background-color: var(--accent1);
+  color: #fff;
+}
+button.primary:hover {
+  background-color: var(--accent2);
 }
