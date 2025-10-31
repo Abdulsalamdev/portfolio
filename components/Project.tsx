@@ -109,7 +109,7 @@ export default function ProjectsSection() {
   }}
   whileTap={{ scale: 0.98 }}
 >
-  {/* <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
     <Image
       src={project.image}
       alt={project.title}
@@ -123,7 +123,7 @@ export default function ProjectsSection() {
         marginBottom: "12px"
       }}
     />
-  </motion.div> */}
+  </motion.div>
 
   <h3
     style={{
