@@ -1,60 +1,45 @@
 @import "tailwindcss";
 @import "tailwindcss/preflight";
 @import "tailwindcss/utilities";
-
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-/* ======================================
-   Base Styles
-====================================== */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply transition-colors duration-300 ease-in-out;
-  background-color: var(--bg);
-  color: var(--text);
+  @apply transition-colors duration-300 ease-in-out bg-[var(--bg)] text-[var(--text)];
   font-family: 'Outfit', sans-serif;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ======================================
-   Theme Tokens
-   (Light & Dark Mode)
-====================================== */
-
-/* Default: Light Theme */
+/* Light Theme */
 :root {
-  --bg: #F9FAFB;
-  --text: #1F2937;
-  --muted: #6B7280;
-  --accent1: #8A63F7;
-  --accent2: #6C4BD1;
-  --accent3: #F4B400;
+  --bg: #f9fafb;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent1: #8a63f7;
+  --accent2: #6c4bd1;
+  --accent3: #f4b400;
 }
 
 /* Dark Theme */
 [data-theme="dark"] {
-  --bg: #0B0B0F;
-  --text: #E6E6E6;
-  --muted: #9CA3AF;
-  --accent1: #8A63F7;
-  --accent2: #6C4BD1;
-  --accent3: #F4B400;
+  --bg: #0b0b0f;
+  --text: #e6e6e6;
+  --muted: #9ca3af;
+  --accent1: #8a63f7;
+  --accent2: #6c4bd1;
+  --accent3: #f4b400;
 }
 
-/* ======================================
-   Utility Overrides
-====================================== */
 a {
   color: var(--accent1);
   text-decoration: none;
   transition: color 0.2s ease;
 }
-
 a:hover {
   color: var(--accent2);
 }
@@ -63,12 +48,10 @@ button {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 button.primary {
   background-color: var(--accent1);
   color: #fff;
 }
-
 button.primary:hover {
   background-color: var(--accent2);
 }

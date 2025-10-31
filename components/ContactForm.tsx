@@ -1,16 +1,20 @@
 "use client";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 
 const ContactForm = () => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
-    const form = e.currentTarget; // ✅ Save reference before await
+    const form = e.currentTarget;
     const formData = new FormData(form);
     const data = {
       name: formData.get("name"),
@@ -21,20 +25,15 @@ const ContactForm = () => {
     try {
       const res = await fetch("/api", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-
       const result = await res.json();
 
-      if (!res.ok || !result.success) {
-        throw new Error("Something went wrong");
-      }
+      if (!res.ok || !result.success) throw new Error("Something went wrong");
 
       toast.success("Message sent successfully!");
-      form.reset(); // ✅ Now safe to use
+      form.reset();
     } catch (error) {
       toast.error("Network error. Please try again.");
     } finally {
@@ -42,14 +41,26 @@ const ContactForm = () => {
     }
   };
 
+  // Colors based on theme
+  const bgColor = isDark ? "#0B0B0F" : "#F9FAFB";
+  const textColor = isDark ? "#E6E6E6" : "#1F2937";
+  const subTextColor = isDark ? "#9CA3AF" : "#4B5563";
+  const inputBg = isDark ? "#1F1F23" : "#FFFFFF";
+  const inputBorder = isDark ? "#333" : "#DDD";
+  const buttonBg = "#6C4BD1";
+  const buttonText = "#FFFFFF";
+
   return (
     <section
       id="contact"
-      style={{ background: "#0B0B0F", color: "#E6E6E6", padding: "80px 20px" }}
+      style={{
+        backgroundColor: bgColor,
+        color: textColor,
+        padding: "80px 20px",
+        width: "100vw",
+      }}
     >
-      <div
-        style={{ maxWidth: "700px", marginInline: "auto", textAlign: "center" }}
-      >
+      <div style={{ maxWidth: "700px", marginInline: "auto", textAlign: "center" }}>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,11 +69,12 @@ const ContactForm = () => {
         >
           Get In Touch
         </motion.h2>
+
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          style={{ color: "#9CA3AF", marginBottom: "40px" }}
+          style={{ color: subTextColor, marginBottom: "40px" }}
         >
           Have a project in mind or just want to say hello? Feel free to reach
           out — I’m always open to new opportunities and collaborations.
@@ -83,13 +95,12 @@ const ContactForm = () => {
             style={{
               padding: "12px 16px",
               borderRadius: "8px",
-              backgroundColor: "#1F1F23",
-              border: "1px solid #333",
-              color: "#E6E6E6",
+              backgroundColor: inputBg,
+              border: `1px solid ${inputBorder}`,
+              color: textColor,
               fontSize: "16px",
             }}
           />
-
           <input
             type="email"
             name="email"
@@ -98,13 +109,12 @@ const ContactForm = () => {
             style={{
               padding: "12px 16px",
               borderRadius: "8px",
-              backgroundColor: "#1F1F23",
-              border: "1px solid #333",
-              color: "#E6E6E6",
+              backgroundColor: inputBg,
+              border: `1px solid ${inputBorder}`,
+              color: textColor,
               fontSize: "16px",
             }}
           />
-
           <textarea
             name="message"
             placeholder="Your Message"
@@ -113,19 +123,18 @@ const ContactForm = () => {
             style={{
               padding: "12px 16px",
               borderRadius: "8px",
-              backgroundColor: "#1F1F23",
-              border: "1px solid #333",
-              color: "#E6E6E6",
+              backgroundColor: inputBg,
+              border: `1px solid ${inputBorder}`,
+              color: textColor,
               fontSize: "16px",
             }}
           ></textarea>
-
           <button
             type="submit"
             disabled={loading}
             style={{
-              backgroundColor: "#6C4BD1",
-              color: "#fff",
+              backgroundColor: buttonBg,
+              color: buttonText,
               padding: "12px 20px",
               borderRadius: "8px",
               fontWeight: "600",
@@ -137,11 +146,9 @@ const ContactForm = () => {
           </button>
         </motion.form>
 
-        <p style={{ marginTop: "30px", color: "#9CA3AF" }}>
+        <p style={{ marginTop: "30px", color: subTextColor }}>
           Designed & developed by{" "}
-          <span style={{ color: "#8A63F7", fontWeight: "500" }}>
-            Silent Architect
-          </span>
+          <span style={{ color: "#8A63F7", fontWeight: "500" }}>Silent Architect</span>
         </p>
       </div>
     </section>

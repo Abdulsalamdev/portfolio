@@ -19,8 +19,8 @@ export const projects: ProjectType[] = [
     description:
       "A modern, responsive portfolio built with Next.js, Tailwind CSS, and Framer Motion. Features dark/light theme, animations, and project filtering.",
     image: "/projects/portfolio.png", // 📌 ensure this image exists at /public/projects/portfolio.png
-    liveUrl: "https://silent-architect.vercel.app",
-    codeUrl: "https://github.com/yourusername/portfolio",
+    liveUrl: "https://abdulsalamakinyoola.vercel.app",
+    codeUrl: "https://github.com/Abdulsalamdev/portfolio",
   },
   {
     id: '2',

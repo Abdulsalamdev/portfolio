@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTheme } from 'next-themes'
 
 const experiences = [
   {
@@ -38,16 +39,36 @@ const experiences = [
 ]
 
 export default function ExperienceSection() {
+  const { theme } = useTheme()
+
+  const isDark = theme === 'dark'
+
+  const styles = {
+    section: {
+      padding: '80px 20px',
+      background: isDark ? '#0B0B0F' : '#F8F9FA',
+      color: isDark ? '#E6E6E6' : '#1A1A1A',
+      minHeight: '100vh',
+      width: '100vw',
+      transition: 'all 0.3s ease',
+    },
+    card: {
+      background: isDark ? '#1F1F23' : '#FFFFFF',
+      borderRadius: '16px',
+      padding: '24px',
+      boxShadow: isDark
+        ? '0 4px 12px rgba(0,0,0,0.1)'
+        : '0 4px 12px rgba(0,0,0,0.05)',
+      transition: 'all 0.3s ease',
+    },
+    chip: {
+      backgroundColor: isDark ? '#6C4BD1' : '#E0D4FF',
+      color: isDark ? '#fff' : '#3B2A86',
+    },
+  }
+
   return (
-    <section
-      id="experience"
-      style={{
-        padding: '80px 20px',
-        background: '#0B0B0F',
-        color: '#E6E6E6',
-        minHeight: '100vh',
-      }}
-    >
+    <section id="experience" style={styles.section}>
       <div style={{ maxWidth: '1000px', marginInline: 'auto' }}>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -70,12 +91,7 @@ export default function ExperienceSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
-              style={{
-                background: '#1F1F23',
-                borderRadius: '16px',
-                padding: '24px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-              }}
+              style={styles.card}
             >
               <div
                 style={{
@@ -86,13 +102,29 @@ export default function ExperienceSection() {
                   gap: '8px',
                 }}
               >
-                <h3 style={{ fontSize: '20px', fontWeight: '600' }}>{exp.role}</h3>
-                <span style={{ fontSize: '14px', color: '#9CA3AF' }}>{exp.period}</span>
+                <h3 style={{ fontSize: '20px', fontWeight: '600' }}>
+                  {exp.role}
+                </h3>
+                <span style={{ fontSize: '14px', color: isDark ? '#9CA3AF' : '#6B7280' }}>
+                  {exp.period}
+                </span>
               </div>
-              <p style={{ color: '#9CA3AF', fontStyle: 'italic', marginBottom: '10px' }}>
+              <p
+                style={{
+                  color: isDark ? '#9CA3AF' : '#6B7280',
+                  fontStyle: 'italic',
+                  marginBottom: '10px',
+                }}
+              >
                 {exp.company}
               </p>
-              <p style={{ fontSize: '16px', lineHeight: '1.6', marginBottom: '16px' }}>
+              <p
+                style={{
+                  fontSize: '16px',
+                  lineHeight: '1.6',
+                  marginBottom: '16px',
+                }}
+              >
                 {exp.description}
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
@@ -100,8 +132,7 @@ export default function ExperienceSection() {
                   <span
                     key={i}
                     style={{
-                      backgroundColor: '#6C4BD1',
-                      color: '#fff',
+                      ...styles.chip,
                       fontSize: '12px',
                       padding: '6px 12px',
                       borderRadius: '999px',

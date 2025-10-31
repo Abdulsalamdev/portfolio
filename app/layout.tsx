@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Abdulsalam Akinyoola | Full-Stack Developer Portfolio",
     description: "Built with Next.js, Node.js, and MongoDB.",
-    site: "@Abdulsalamdevv",
+    site: "@Abdulsalamdev",
   },
 };
 
@@ -49,7 +49,7 @@ export default function RootLayout({
         className={`${outfit.variable} min-h-screen font-outfit transition-colors duration-300`}
       >
         {/* ✅ Fix: attribute="data-theme" for CSS variable system */}
-        <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem>
+       <ThemeProvider>
           {children}
         </ThemeProvider>
 
