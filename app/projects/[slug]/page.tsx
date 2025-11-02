@@ -1,36 +1,31 @@
-'use client'
-
 import { notFound } from 'next/navigation'
 import { projects } from '@/data/project'
-import { useTheme } from 'next-themes'
+import Image from 'next/image'
+import Link from 'next/link'
 import { FaGithub } from 'react-icons/fa'
 import { SiNetlify, SiVercel } from 'react-icons/si'
-import Link from 'next/link'
-import Image from 'next/image'
-import * as React from 'react'
 
 type Props = {
-  params: { slug: string }
+  params: {
+    slug: Promise<string>
+  }
 }
 
-export default function ProjectDetails({ params }: Props) {
+// Generate static paths
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.slug,
+  }))
+}
 
-     const [slug, setSlug] = React.useState<string | null>(null);
-
-     
-  React.useEffect(() => {
-    setSlug(params.slug);
-  }, [params]);
-
-  if (!slug) return null;
+export default async function ProjectDetails({ params }: Props) {
+  // Await the slug
+  const slug = await params.slug
 
   const project = projects.find((p) => p.slug === slug)
-
   if (!project) return notFound()
 
-  const { theme } = useTheme()
-  const isDark = theme === 'dark'
-
+  const isDark = false
   const bgColor = isDark ? '#0B0B0F' : '#F9FAFB'
   const textColor = isDark ? '#E6E6E6' : '#1F2937'
   const subTextColor = isDark ? '#9CA3AF' : '#4B5563'
@@ -50,7 +45,7 @@ export default function ProjectDetails({ params }: Props) {
             </a>
           )}
           {project.codeUrl && (
-            <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" style={{ padding: '10px 16px', backgroundColor: isDark ? '#1F1F23' : '#E5E7EB', color: isDark ? '#E6E6E6' : '#1F2937', borderRadius: '8px', fontWeight: 500, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+            <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" style={{ padding: '10px 16px', backgroundColor: '#E5E7EB', color: '#1F2937', borderRadius: '8px', fontWeight: 500, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
               <FaGithub />
               View Code
             </a>

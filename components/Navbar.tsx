@@ -16,13 +16,14 @@ const navLinks = [
 
 export default function Navbar() {
   return (
+
     <header
-      className="fixed top-0 z-50 w-full backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-all duration-300"
-      style={{
-        paddingInline: "30px",
-        paddingBlock: "15px",
-      }}
-    >
+  className="fixed top-0 z-50 w-full backdrop-blur-md transition-all duration-300 border-b border-[var(--muted)] bg-[var(--bg)]/80"
+  style={{
+    paddingInline: "30px",
+    paddingBlock: "15px",
+  }}
+>
       <nav
         className="flex justify-between items-center"
       >
