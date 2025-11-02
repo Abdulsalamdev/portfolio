@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useTheme } from 'next-themes'
+import { useTheme } from '@/components/ThemeProvider'
 import { projects } from '@/data/project'
 import { FaGithub } from 'react-icons/fa'
 import { SiNetlify, SiVercel } from 'react-icons/si'
@@ -139,24 +139,45 @@ export default function ProjectsSection() {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={350}
-                  height={200}
+              {/* ✅ Conditionally render image or fallback */}
+              {project.image ? (
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={350}
+                    height={200}
+                    style={{
+                      width: '100%',
+                      height: '200px',
+                      objectFit: 'cover',
+                      borderRadius: '8px',
+                      marginBottom: '12px',
+                    }}
+                  />
+                </motion.div>
+              ) : (
+                <div
                   style={{
                     width: '100%',
                     height: '200px',
-                    objectFit: 'cover',
                     borderRadius: '8px',
                     marginBottom: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundColor: isDarkMode ? '#23232A' : '#E5E7EB',
+                    color: isDarkMode ? '#9CA3AF' : '#4B5563',
+                    fontSize: '14px',
+                    fontWeight: 500,
                   }}
-                />
-              </motion.div>
+                >
+                  No Image Available
+                </div>
+              )}
 
               <h3
                 style={{

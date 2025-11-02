@@ -1,9 +1,8 @@
-// /data/projects.ts
 export type ProjectType = {
   id: string
   title: string
   category: 'frontend' | 'backend' | 'fullstack'
-  image: string
+  image?: string
   liveUrl: string
   codeUrl: string
   slug: string
@@ -18,7 +17,7 @@ export const projects: ProjectType[] = [
     category: "fullstack",
     description:
       "A modern, responsive portfolio built with Next.js, Tailwind CSS, and Framer Motion. Features dark/light theme, animations, and project filtering.",
-    image: "/projects/profile.png", // 📌 ensure this image exists at /public/projects/portfolio.png
+    image: "/projects/profile.png", 
     liveUrl: "https://abdulsalamakinyoola.vercel.app",
     codeUrl: "https://github.com/Abdulsalamdev/portfolio",
   },
@@ -29,7 +28,7 @@ export const projects: ProjectType[] = [
     category: "backend",
     description:
       "A secure and scalable REST API built with Express.js and MongoDB, supporting CRUD operations and JWT authentication.",
-    image: "/projects/notes-api.png", // 📌 put this in /public/projects/
+    // image: "/projects/notes-api.png",
     liveUrl: "https://notes-api.vercel.app",
     codeUrl: "https://github.com/yourusername/notes-api",
   },
@@ -73,7 +72,7 @@ export const projects: ProjectType[] = [
   category: "backend",
   description:
     "RESTful authentication API using Node.js, Express, MongoDB, and JWT. Includes registration, login, password reset, and protected routes.",
-  image: "/projects/auth-api.png",
+  // image: "/projects/auth-api.png",
   liveUrl: "https://auth-api.vercel.app",
   codeUrl: "https://github.com/yourusername/auth-api",
 },
