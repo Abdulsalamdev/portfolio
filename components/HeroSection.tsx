@@ -51,11 +51,12 @@ export default function HeroSection() {
   const [step, setStep] = useState(1);
 
   return (
+
     <section
-      id="home"
-      style={{ paddingTop: "60px", paddingInline: "20px", width: "100vw" }}
-      className="relative min-h-screen flex items-center justify-center px-6 sm:px-10 py-24 sm:py-32 bg-[var(--bg)] text-[var(--text)] overflow-hidden"
-    >
+  id="home"
+  style={{ paddingTop: "60px", paddingInline: "20px", width: "100vw" }}
+  className="relative min-h-screen flex items-center justify-center px-6 sm:px-10 py-24 sm:py-32 bg-[var(--bg)] text-[var(--text)] overflow-hidden transition-colors duration-500 ease-in-out"
+>
       {/* 🔮 Subtle Animated Background Blob */}
       <motion.div
         className="absolute w-80 h-80 sm:w-[28rem] sm:h-[28rem] bg-[var(--accent1)] rounded-full opacity-20 blur-3xl"

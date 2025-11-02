@@ -45,16 +45,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+  <ThemeProvider>
       <body
         className={`${outfit.variable} min-h-screen font-outfit transition-colors duration-300`}
       >
-        {/* ✅ Fix: attribute="data-theme" for CSS variable system */}
-       <ThemeProvider>
           {children}
-        </ThemeProvider>
-
         <ToastContainer position="top-right" autoClose={3000} />
       </body>
+        </ThemeProvider>
     </html>
   );
 }
