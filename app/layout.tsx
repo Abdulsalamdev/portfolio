@@ -29,14 +29,26 @@ export const metadata: Metadata = {
     siteName: "Abdulsalam Akinyoola Portfolio",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://abdulsalamakinyoola.vercel.app/profile.png",
+        width: 800,
+        height: 800,
+        alt: "Abdulsalam Akinyoola Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Abdulsalam Akinyoola | Full-Stack Developer Portfolio",
-    description: "Built with Next.js, Node.js, and MongoDB.",
+    description:
+      "Portfolio of Abdulsalam Akinyoola, a full-stack developer skilled in Next.js, Node.js, React, and modern web technologies.",
+    images: ["https://abdulsalamakinyoola.vercel.app/profile.png"],
     site: "@Abdulsalamdev",
+    creator: "@Abdulsalamdev",
   },
 };
+
 
 export default function RootLayout({
   children,
