@@ -51,7 +51,7 @@ const Skills = () => {
     <section
       id="skills"
       className="w-full py-24 px-4 md:px-10 lg:px-20 bg-transparent flex justify-center items-center"
-      style={{ scrollMarginTop: "80px" }}
+      style={{ scrollMarginTop: "80px" , width: "100vw"}}
     >
       <motion.div
         variants={containerVariants}

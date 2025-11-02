@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/ThemeProvider";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 

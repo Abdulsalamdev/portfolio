@@ -1,42 +1,51 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useTheme } from 'next-themes'
+import { useTheme } from "@/components/ThemeProvider";
 
 const experiences = [
   {
     role: 'Freelance Web Developer',
-    company: 'Self-employed / Remote',
-    period: 'Jan 2024 – Present',
+    company: 'Upwork / Remote',
+    period: '2025 – Present',
     description:
-      'Built modern websites and fullstack applications for personal projects and freelance clients using technologies like React, Node.js, MongoDB, and Next.js.',
-    stack: ['Next.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'Framer Motion'],
+      'Providing fullstack development services on Upwork, building websites and web applications for clients using modern technologies.',
+    stack: ['React', 'Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS'],
   },
   {
-    role: 'Open Source Contributor',
-    company: 'GitHub / Various Repos',
-    period: 'Feb 2024 – May 2024',
+    role: 'Full Stack Developer Intern',
+    company: 'AFEX Exchange Commodity',
+    period: 'Jan 2023 – Dec 2024',
     description:
-      'Contributed to open source projects focused on REST APIs and frontend UI components. Fixed bugs, improved docs, and added features.',
-    stack: ['JavaScript', 'Node.js', 'Git', 'Markdown'],
+      'Worked on internal and personal projects as a full stack intern, building web apps with a focus on frontend and backend integration.',
+    stack: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
   },
   {
-    role: 'Tech Team Member — Developer Club FUTA',
-    company: 'FUTA Campus',
-    period: 'Nov 2023 – Present',
+    role: 'Backend Developer (Bootcamp)',
+    company: 'FUTA / Backend Developer Bootcamp',
+    period: 'Jun 2025 – Aug 2025',
     description:
-      'Collaborated with student developers to build internal tools and organize weekly dev sessions.',
-    stack: ['GitHub', 'HTML', 'Tailwind CSS', 'React'],
+      'Completed an intensive backend bootcamp focusing on system design, architecture, and building scalable backend solutions.',
+    stack: ['Node.js', 'Express.js', 'MongoDB', 'System Design', 'REST APIs'],
   },
   {
-    role: 'CS101 Group Project — Attendance Management App',
-    company: 'Federal University of Technology, Akure',
-    period: 'Apr 2024',
+    role: 'Full Stack Engineer',
+    company: 'TeliyTech',
+    period: 'Sep 2025 – Present',
     description:
-      'Led a 4-person team to build a Node.js + MongoDB attendance web app. Handled backend logic, APIs, and database setup.',
-    stack: ['Node.js', 'Express.js', 'MongoDB', 'JavaScript'],
+      'Building and maintaining fullstack web applications, collaborating on system design, and delivering scalable solutions for production.',
+    stack: ['Next.js', 'Node.js', 'MongoDB', 'React', 'Tailwind CSS'],
   },
-]
+  {
+    role: 'Full Stack Tutor',
+    company: 'TeliyTech',
+    period: 'Sep 2025 – Present',
+    description:
+      'Mentoring and tutoring students on fullstack development, covering frontend, backend, and deployment practices.',
+    stack: ['React', 'Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+  },
+];
+
 
 export default function ExperienceSection() {
   const { theme } = useTheme()

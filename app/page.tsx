@@ -7,7 +7,7 @@ import ProjectsSection from "@/components/Project";
 import Experience from "@/components/ExperienceSection";
 import Services from "@/components/Services";
 import ContactForm from "@/components/ContactForm";
-import ThemeWrapper from "@/components/ThemeeWrapper";
+
 
 export const metadata: Metadata = {
   title: "Abdulsalam Akinyoola | Portfolio",

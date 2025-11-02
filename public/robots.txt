@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://abdulsalamakinyoola.vercel.app/
+
+# Sitemaps
+Sitemap: https://abdulsalamakinyoola.vercel.app/sitemap.xml

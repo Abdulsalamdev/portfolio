@@ -167,7 +167,7 @@ export default function HeroSection() {
           className="relative w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-[var(--accent1)] shadow-[0_0_25px_rgba(138,99,247,0.4)]"
         >
           <Image
-            src="/profile.jpg"
+            src="/profile.png"
             alt="Portrait of Abdulsalam Akinyoola, full-stack developer"
             width={400}
             height={400}

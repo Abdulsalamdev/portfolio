@@ -23,6 +23,8 @@ body {
   --accent1: #8a63f7;
   --accent2: #6c4bd1;
   --accent3: #f4b400;
+   --muted-bg: #e5e7eb;   
+  --card-bg: #ffffff;  
 }
 
 /* Dark Theme */
@@ -33,6 +35,8 @@ body {
   --accent1: #8a63f7;
   --accent2: #6c4bd1;
   --accent3: #f4b400;
+    --muted-bg: #1a1a1f;   
+  --card-bg: #111115;
 }
 
 a {
