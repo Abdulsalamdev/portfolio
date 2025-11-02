@@ -121,7 +121,8 @@ export default function ProjectDetail({ project }: Props) {
             marginTop: "16px",
           }}
         >
-          {project.liveUrl && (
+          {/* Conditionally render Live URL */}
+          {project.liveUrl && project.liveUrl !== "#" && (
             <a
               href={project.liveUrl}
               target="_blank"
@@ -143,7 +144,9 @@ export default function ProjectDetail({ project }: Props) {
               <span>View Live</span>
             </a>
           )}
-          {project.codeUrl && (
+
+          {/* Conditionally render Code URL */}
+          {project.codeUrl && project.codeUrl !== "#" && (
             <a
               href={project.codeUrl}
               target="_blank"
@@ -164,6 +167,19 @@ export default function ProjectDetail({ project }: Props) {
               <FaGithub />
               <span>View Code</span>
             </a>
+          )}
+
+          {/* If neither link exists */}
+          {!project.liveUrl && !project.codeUrl && (
+            <span
+              style={{
+                fontSize: "14px",
+                color: isDark ? "#9CA3AF" : "#4B5563",
+                fontStyle: "italic",
+              }}
+            >
+              No live preview or code available
+            </span>
           )}
         </div>
 

@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/ThemeProvider";
+
 
 export default function Services() {
   const { theme } = useTheme();

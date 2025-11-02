@@ -139,7 +139,7 @@ export default function ProjectsSection() {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              {/* ✅ Conditionally render image or fallback */}
+              {/* Image */}
               {project.image ? (
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -209,7 +209,8 @@ export default function ProjectsSection() {
                   marginTop: '12px',
                 }}
               >
-                {project.liveUrl && (
+                {/* Conditionally render Live URL */}
+                {project.liveUrl && project.liveUrl !== '#' && (
                   <a
                     href={project.liveUrl}
                     target="_blank"
@@ -232,22 +233,25 @@ export default function ProjectsSection() {
                   </a>
                 )}
 
-                <a
-                  href={project.codeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    color: '#8A63F7',
-                    fontSize: '14px',
-                    textDecoration: 'none',
-                  }}
-                >
-                  <FaGithub size={16} />
-                  View Code
-                </a>
+                {/* Conditionally render Code URL */}
+                {project.codeUrl && project.codeUrl !== '#' && (
+                  <a
+                    href={project.codeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      color: '#8A63F7',
+                      fontSize: '14px',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    <FaGithub size={16} />
+                    View Code
+                  </a>
+                )}
 
                 <Link
                   href={`/projects/${project.slug}`}
@@ -276,3 +280,4 @@ export default function ProjectsSection() {
     </section>
   )
 }
+
