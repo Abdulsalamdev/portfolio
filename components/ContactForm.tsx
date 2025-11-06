@@ -4,7 +4,6 @@ import { useTheme } from "@/components/ThemeProvider";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { Github, Twitter, Mail } from "lucide-react";
-import "./globals.css";
 
 const ContactForm = () => {
   const { theme } = useTheme();
