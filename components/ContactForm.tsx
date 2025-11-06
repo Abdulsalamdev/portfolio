@@ -4,6 +4,7 @@ import { useTheme } from "@/components/ThemeProvider";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { Github, Twitter, Mail } from "lucide-react";
+import "./globals.css";
 
 const ContactForm = () => {
   const { theme } = useTheme();
@@ -164,26 +165,45 @@ const ContactForm = () => {
           }}
           // className="flex justify-center gap-6 mt-10 "
         >
-          <a
-            href="https://github.com/cybergabby"
-            target="_blank"
-            className="link"
-          >
-            <Github size={22} />
-          </a>
-          <a
-            href="https://x.com/gabbytech01"
-            target="_blank"
-            className="link"
-          >
-            <Twitter size={22} />
-          </a>
-          <a
-            href="mailto:gabbytechsec@gmail.com"
-            className="link"
-          >
-            <Mail size={22} />
-          </a>
+       <motion.div
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ delay: 0.4 }}
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    gap: "24px",
+    marginTop: "20px",
+  }}
+>
+  {/* GitHub icon */}
+  <a
+    href="https://github.com/abdulsalamdev"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      color: isDark ? "#E6E6E6" : "#1F2937",
+      transition: "color 0.3s ease",
+    }}
+  >
+    <Github size={22} />
+  </a>
+
+  {/* Twitter icon */}
+  <a
+    href="https://x.com/Abdulsalamdev"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      color: isDark ? "#E6E6E6" : "#1F2937",
+      transition: "color 0.3s ease",
+    }}
+  >
+    <Twitter size={22} />
+  </a>
+</motion.div>
+
+      
         </motion.div>
       </div>
     </section>
