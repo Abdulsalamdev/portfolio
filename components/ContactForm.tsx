@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useTheme } from "@/components/ThemeProvider";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { Github, Twitter, Mail } from "lucide-react";
 
 const ContactForm = () => {
   const { theme } = useTheme();
@@ -150,6 +151,40 @@ const ContactForm = () => {
           Designed & developed by{" "}
           <span style={{ color: "#8A63F7", fontWeight: "500" }}>Silent Architect</span>
         </p>
+
+            <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          style={{
+            display: "flex",
+            justifyContent:"center",
+            gap: "24px",
+            marginTop: "20px"
+          }}
+          // className="flex justify-center gap-6 mt-10 "
+        >
+          <a
+            href="https://github.com/cybergabby"
+            target="_blank"
+            className="link"
+          >
+            <Github size={22} />
+          </a>
+          <a
+            href="https://x.com/gabbytech01"
+            target="_blank"
+            className="link"
+          >
+            <Twitter size={22} />
+          </a>
+          <a
+            href="mailto:gabbytechsec@gmail.com"
+            className="link"
+          >
+            <Mail size={22} />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
