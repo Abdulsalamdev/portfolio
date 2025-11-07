@@ -61,18 +61,20 @@ const Skills = () => {
         className="max-w-6xl text-center flex flex-col items-center gap-6"
       >
         {/* Title */}
-        <motion.h2
-          variants={fadeUp}
-          className="relative text-4xl md:text-5xl font-bold text-[var(--text)]"
-         
-        >
-          My <span className="text-[var(--accent1)]">Skills</span>
-        </motion.h2>
+
+              <motion.h2
+                  variants={fadeUp}
+                  className="relative text-4xl md:text-5xl font-bold text-[var(--text)]"
+                >
+                 My <span className="text-[var(--accent1)]">Skills</span>
+                  <span className="absolute left-1/2 -bottom-3 w-20 h-[3px] bg-[var(--accent1)] rounded-full transform -translate-x-1/2"></span>
+                </motion.h2>
 
         {/* Subtitle */}
         <motion.p
           variants={fadeUp}
-          className="text-base md:text-lg max-w-2xl leading-relaxed mb-10 text-[var(--muted)]"
+          // className="text-base md:text-lg max-w-2xl leading-relaxed mb-10 text-[var(--muted)]"
+          className="text-[var(--muted)] text-lg md:text-xl leading-relaxed tracking-wide max-w-3xl"
         >
           A collection of technologies and tools I use to design, build, and
           deliver seamless digital experiences.

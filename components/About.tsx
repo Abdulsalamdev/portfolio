@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-import Link from "next/link"
+import Link from "next/link";
 
 const containerVariants = {
   hidden: {},
@@ -24,7 +24,7 @@ const About = () => {
     <section
       id="about"
       className="relative w-full min-h-screen flex items-center justify-center py-24 px-6 md:px-16 lg:px-32 overflow-hidden bg-transparent"
-      style={{ scrollMarginTop: "80px" , width: "100vw"}}
+      style={{ scrollMarginTop: "80px", width: "100vw" }}
     >
       {/* 🌀 Animated background glow */}
       <motion.div
@@ -55,25 +55,27 @@ const About = () => {
           variants={fadeUp}
           className="text-[var(--muted)] text-lg md:text-xl leading-relaxed tracking-wide max-w-3xl"
         >
-          I’m a full-stack developer passionate about building seamless,
-          high-performance web applications. My journey began with curiosity
-          about how the internet works, and since then, I’ve been creating
-          projects that merge great user experiences with scalable backend
-          systems.
+          I’m a CS student and full-stack developer passionate about building
+          intelligent, high-performance web applications. My journey started
+          with a deep curiosity about how technology connects people through the
+          web and over time, that curiosity evolved into a mission to create
+          systems that are both smart and seamless.
+          <br />
+          <br />I specialize in bridging the frontend, backend, and now, the
+          emerging world of AI. I love solving meaningful problems through
+          clean, scalable code while continuously learning and experimenting
+          with new technologies.
           <br />
           <br />
-          I enjoy solving meaningful problems through code, continuously
-          learning, and contributing to impactful digital products. As I grow in
-          tech, I’m transitioning into Artificial Intelligence — aspiring to
-          build intelligent systems that solve real-world problems, enhance user
-          experiences, and automate complex processes through machine learning
-          and deep learning.
+          As I grow in tech, I’m transitioning into Artificial Intelligence,
+          aspiring to become a Full Stack AI Engineer who builds intelligent
+          systems that enhance user experiences, solve real-world challenges,
+          and automate complex processes through machine learning and deep
+          learning.
         </motion.p>
       </motion.div>
-     
     </section>
   );
 };
 
 export default About;
-
