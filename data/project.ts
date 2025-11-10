@@ -21,19 +21,9 @@ export const projects: ProjectType[] = [
     liveUrl: "https://abdulsalamakinyoola.vercel.app",
     codeUrl: "https://github.com/Abdulsalamdev/portfolio",
   },
+
   {
     id: "2",
-    title: "string analyzer service",
-    slug: "string-analyzer",
-    category: "backend",
-    description:
-      "Natural Language String Analyzer 🔍 A RESTful API that analyzes strings — detects palindromes, counts words, computes SHA-256 hashes, and even filters strings using natural language queries",
-    // image: "/projects/notes-api.png",
-    liveUrl: "#",
-    codeUrl: "https://github.com/Abdulsalamdev/string-analyzer-service",
-  },
-  {
-    id: "3",
     title: "File Service",
     slug: "file-service",
     category: "backend",
@@ -42,6 +32,17 @@ export const projects: ProjectType[] = [
     // image: "/projects/notes-api.png",
     liveUrl: "#",
     codeUrl: "https://github.com/Abdulsalamdev/File-vault",
+  },
+  {
+    id: "3",
+    title: "string analyzer service",
+    slug: "string-analyzer",
+    category: "backend",
+    description:
+      "Natural Language String Analyzer 🔍 A RESTful API that analyzes strings — detects palindromes, counts words, computes SHA-256 hashes, and even filters strings using natural language queries",
+    // image: "/projects/notes-api.png",
+    liveUrl: "#",
+    codeUrl: "https://github.com/Abdulsalamdev/string-analyzer-service",
   },
   {
     id: "4",
@@ -56,6 +57,17 @@ export const projects: ProjectType[] = [
   },
   {
     id: "5",
+    title: "TaskNest App",
+    slug: "tasknest",
+    category: "frontend",
+    description:
+      "TaskNest is a modern, responsive to-do app with animations, dark mode, and drag-and-drop support. Built using clean UI/UX principles with HTML, CSS, and Vanilla JavaScript.",
+    image: "/projects/tasknest.png",
+    liveUrl: "https://tasknest2.netlify.app/",
+    codeUrl: "https://github.com/Abdulsalamdev/tasknest",
+  },
+  {
+    id: "6",
     title: "Tutordeck App",
     slug: "tutordeck",
     category: "frontend",
@@ -66,7 +78,7 @@ export const projects: ProjectType[] = [
     codeUrl: "https://github.com/Abdulsalamdev/Tutordeck",
   },
   {
-    id: "6",
+    id: "7",
     title: "CarePluse",
     slug: "hospital-api",
     category: "backend",
@@ -77,7 +89,7 @@ export const projects: ProjectType[] = [
     codeUrl: "https://github.com/Abdulsalamdev/CarePluse-backend",
   },
   {
-    id: "7",
+    id: "8",
     title: "Color flipper",
     slug: "color-flipper",
     category: "frontend",
@@ -88,7 +100,7 @@ export const projects: ProjectType[] = [
     codeUrl: "https://github.com/Abdulsalamdev/color-flipper",
   },
   {
-    id: "8",
+    id: "9",
     title: "NaijaAir Frontend",
     slug: "naijaAir-frontend",
     category: "frontend",

@@ -78,7 +78,7 @@ const ContactForm = () => {
           style={{ color: subTextColor, marginBottom: "40px" }}
         >
           Have a project in mind or just want to say hello? Feel free to reach
-          out — I’m always open to new opportunities and collaborations.
+          out, I’m always open to new opportunities and collaborations.
         </motion.p>
 
         <motion.form
