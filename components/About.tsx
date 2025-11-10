@@ -24,7 +24,7 @@ const About = () => {
     <section
       id="about"
       className="relative w-full min-h-screen flex items-center justify-center py-24 px-6 md:px-16 lg:px-32 overflow-hidden bg-transparent"
-      style={{ scrollMarginTop: "80px", width: "100vw" }}
+      style={{ scrollMarginTop: "80px", width: "100vw", paddingTop: "20px"}}
     >
       {/* 🌀 Animated background glow */}
       <motion.div
@@ -52,8 +52,11 @@ const About = () => {
 
         {/* Paragraph */}
         <motion.p
+        style={{
+          paddingInline: "20px"
+        }}
           variants={fadeUp}
-          className="text-[var(--muted)] text-lg md:text-xl leading-relaxed tracking-wide max-w-3xl"
+          className="text-[var(--muted)] text-lg md:text-xl leading-relaxed tracking-wide max-w-3xl px-[20px]"
         >
           I’m a CS student and full-stack developer passionate about building
           intelligent, high-performance web applications. My journey started
