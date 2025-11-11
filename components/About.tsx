@@ -24,7 +24,7 @@ const About = () => {
     <section
       id="about"
       className="relative w-full min-h-screen flex items-center justify-center py-24 px-6 md:px-16 lg:px-32 overflow-hidden bg-transparent"
-      style={{ scrollMarginTop: "80px", width: "100vw", paddingTop: "20px"}}
+      style={{ scrollMarginTop: "80px", width: "100vw", paddingTop: "20px" }}
     >
       {/* 🌀 Animated background glow */}
       <motion.div
@@ -52,28 +52,28 @@ const About = () => {
 
         {/* Paragraph */}
         <motion.p
-        style={{
-          paddingInline: "20px"
-        }}
+          style={{
+            paddingInline: "20px",
+          }}
           variants={fadeUp}
           className="text-[var(--muted)] text-lg md:text-xl leading-relaxed tracking-wide max-w-3xl px-[20px]"
         >
-          I’m a CS student and full-stack developer passionate about building
+          I’m a CS student and Full Stack Engineer passionate about building
           intelligent, high-performance web applications. My journey started
           with a deep curiosity about how technology connects people through the
-          web and over time, that curiosity evolved into a mission to create
+          web, and over time, that curiosity evolved into a mission to create
           systems that are both smart and seamless.
           <br />
-          <br />I specialize in bridging the frontend, backend, and now, the
-          emerging world of AI. I love solving meaningful problems through
-          clean, scalable code while continuously learning and experimenting
-          with new technologies.
+          <br />
+          I specialize in bridging the frontend, backend, and the emerging world
+          of AI. I love solving meaningful problems through clean, scalable code
+          while continuously learning and experimenting with new technologies.
           <br />
           <br />
           As I grow in tech, I’m transitioning into Artificial Intelligence,
           aspiring to become a Full Stack AI Engineer who builds intelligent
           systems that enhance user experiences, solve real-world challenges,
-          and automate complex processes through machine learning and deep
+          and automate complex processes using machine learning and deep
           learning.
         </motion.p>
       </motion.div>
