@@ -14,42 +14,40 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Abdulsalam Akinyoola | Full-Stack Developer Portfolio",
+  title: "Abdulsalam Akinyoola | Full-Stack Engineer Portfolio",
   description:
-    "A portfolio by Abdulsalam Akinyoola – Full-Stack Developer skilled in Next.js, Node.js, MongoDB.",
+    "Portfolio of Abdulsalam Akinyoola, Full-Stack Engineer specializing in Next.js, Node.js, and MongoDB.",
   keywords:
-    "Full-Stack Developer, Next.js, Portfolio, JavaScript, MongoDB, Node.js, Freelance Developer, Nigeria",
+    "Full-Stack Engineer, Web Developer, Next.js, Node.js, React, MongoDB, Portfolio, Freelance Developer, Nigeria",
   authors: [{ name: "Abdulsalam Akinyoola" }],
   creator: "Abdulsalam Akinyoola",
   openGraph: {
-    title: "Abdulsalam Akinyoola | Full-Stack Developer Portfolio",
+    title: "Abdulsalam Akinyoola | Full-Stack Engineer Portfolio",
     description:
-      "Check out the portfolio of Abdulsalam Akinyoola — developer and freelancer for hire.",
+      "Discover the professional portfolio of Abdulsalam Akinyoola, a Full-Stack Engineer with expertise in modern web development and freelance solutions.",
     url: "https://abdulsalamakinyoola.vercel.app",
     siteName: "Abdulsalam Akinyoola Portfolio",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://abdulsalamakinyoola.vercel.app/profile.png",
-        width: 800,
-        height: 800,
+        url: "https://abdulsalamakinyoola.vercel.app/profile_og.png?v=2",
+        width: 1200,
+        height: 630,
         alt: "Abdulsalam Akinyoola Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abdulsalam Akinyoola | Full-Stack Developer Portfolio",
+    title: "Abdulsalam Akinyoola | Full-Stack Engineer Portfolio",
     description:
-      "Portfolio of Abdulsalam Akinyoola, a full-stack developer skilled in Next.js, Node.js, React, and modern web technologies.",
-    images: ["https://abdulsalamakinyoola.vercel.app/profile.png"],
+      "Explore the portfolio of Abdulsalam Akinyoola, a Full-Stack Engineer proficient in Next.js, Node.js, React, and modern web technologies.",
+    images: ["https://abdulsalamakinyoola.vercel.app/profile_og.png?v=2"],
     site: "@Abdulsalamdev",
     creator: "@Abdulsalamdev",
   },
 };
-
-
 export default function RootLayout({
   children,
 }: {
