@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://abdulsalamakinyoola.vercel.app/profile_og.png?v=2",
+        url: "https://abdulsalamakinyoola.vercel.app/profile_ogc.png?v=3",
         width: 1200,
         height: 630,
         alt: "Abdulsalam Akinyoola Portfolio",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Abdulsalam Akinyoola | Full-Stack Engineer Portfolio",
     description:
       "Explore the portfolio of Abdulsalam Akinyoola, a Full-Stack Engineer proficient in Next.js, Node.js, React, and modern web technologies.",
-    images: ["https://abdulsalamakinyoola.vercel.app/profile_og.png?v=2"],
+    images: ["https://abdulsalamakinyoola.vercel.app/profile_ogc.png?v=3"],
     site: "@Abdulsalamdev",
     creator: "@Abdulsalamdev",
   },
